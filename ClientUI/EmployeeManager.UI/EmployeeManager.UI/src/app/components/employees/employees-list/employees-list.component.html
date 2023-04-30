@@ -1,0 +1,70 @@
+<div class="col">
+  <div class="row-6">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="https://imageio.forbes.com/specials-images/imageserve/5eff47d29756420007f6f684/Paperwork-and-hands-on-a-board-room-table-at-a-business-presentation-or-seminar-/960x0.jpg?format=jpg&width=960"
+            class="d-block w-100" alt="Slide-1">
+        </div>
+        <div class="carousel-item">
+          <img src="https://nuvsmart.com/wp-content/uploads/2019/04/img-portfolio-03.jpg" class="d-block w-100"
+            alt="Slide-2">
+        </div>
+        <div class="carousel-item">
+          <img src="https://blog.mycorporation.com/wp-content/uploads/2018/01/management_employee.jpg"
+            class="d-block w-100" alt="Slide-3">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <div class="container my-5 table-responsive">
+    <h1 class="mb-3">Employees</h1>
+    <div class="row-6">
+      <table class="table table-bordered table-hover" *ngIf="employees && employees.length > 0">
+        <thead class="table-success">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Salary</th>
+            <th>Department</th>
+            <th> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees">
+            <td> {{ employee.id }} </td>
+            <td> {{ employee.name }} </td>
+            <td> {{ employee.email }} </td>
+            <td> {{ employee.phone }} </td>
+            <td> {{ employee.salary }} </td>
+            <td> {{ employee.department }} </td>
+            <td><a [routerLink]="['/employees', 'edit', employee.id]">View</a></td>
+          </tr>
+
+        </tbody>
+      </table>
+      <p *ngIf="!employees || employees.length <= 0">No Employees Found</p>
+    </div>
+  </div>
+</div>
+
+
+
+<footer class="footer mt-auto py-3 bg-light">
+  <div class="container">
+    <span class="text-muted">@ 2022 | JKIT Employee Management System | All Rights Reserved.</span>
+  </div>
+</footer>
